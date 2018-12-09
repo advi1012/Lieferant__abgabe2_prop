@@ -1,0 +1,73 @@
+@startuml
+
+skinparam componentStyle uml2
+
+left to right direction
+
+package de.shop.lieferant #DDDDDD {
+    [Router]
+
+    package rest <<boundary>> #FFFFFF {
+        [LieferantHandler]
+        [LieferantMultimediaHandler]
+    }
+
+    package service <<control>> #FFFFFF {
+        [LieferantService]
+        [LieferantMultimediaService]
+    }
+
+    package db <<control>> #FFFFFF {
+        [LieferantRepository]
+    }
+
+    package mail <<control>> #FFFFFF {
+        [Mailer]
+    }
+
+    package entity <<entity>> #FFFFFF {
+        [Lieferant]
+    }
+}
+
+cloud {
+    [Spring Data MongoDB]
+}
+
+database "hska (MongoDB)" {
+    [Collection lieferant]
+}
+
+queue "Apache Kafka"
+
+node {
+    [Mailserver]
+}
+
+RESTClient ~~> [Router]
+[Router] ..> [LieferantHandler]
+[Router] ..> [LieferantMultimediaHandler]
+
+[LieferantHandler] ..> [Lieferant]
+[LieferantHandler] --> [LieferantService]
+[LieferantMultimediaHandler] --> [LieferantMultimediaService]
+[LieferantService] .up.> [Lieferant]
+
+[LieferantService] --> [LieferantRepository]
+[LieferantRepository] ..> [Lieferant]
+
+[LieferantRepository] ~~> [Spring Data MongoDB]
+[LieferantMultimediaService] ~~> [Spring Data MongoDB]
+[Spring Data MongoDB] ~~> [Collection lieferant]
+
+[LieferantService] --> [Mailer]
+[Mailer] .up.> [Lieferant]
+[Mailer] ~~> [Apache Kafka]
+[Apache Kafka] ~~> [Mailserver]
+
+' [hidden] fuer nicht-existierende Beziehungen als Workaround fuer das Layout
+[LieferantHandler] -[hidden]-> [Lieferant]
+
+footer (c) Jürgen Zimmermann
+
+@enduml

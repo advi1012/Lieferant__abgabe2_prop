@@ -1,0 +1,75 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam componentStyle uml2
+
+package reactor.core.publisher {
+    abstract class Mono {
+    }
+
+    abstract class Flux {
+    }
+}
+
+package org.springframework {
+    package data {
+        package repository.reactive {
+            interface ReactiveCrudRepository {
+            }
+        }
+
+        package mongodb.core {
+            class ReactiveMongoTemplate {
+            }
+        }
+    }
+
+    package security.core {
+        interface Authentication {
+        }
+    }
+}
+
+package de.hska.lieferant {
+    package config.security {
+        class CustomUserDetailsService << control >> {
+        }
+    }
+
+    package entity {
+        class Lieferant << entity >> {
+        }
+    }
+
+    package service #DDDDDD {
+        LieferantRepository ..|> ReactiveCrudRepository
+        LieferantService --> "1" LieferantRepository
+        LieferantService --> "1" CustomUserDetailsService
+        LieferantService --> "1" ReactiveMongoTemplate
+        LieferantService ..> Lieferant
+        LieferantService ..> Flux
+        LieferantService ..> Mono
+        LieferantService ..> Authentication
+
+        interface LieferantRepository {
+        }
+
+        class LieferantService << control >> << @Component >> << @Validated >> << @CacheConfig >> {
+            + @Cacheable(key = "#id") findById(id: String): Mono<Lieferant>
+            + find(queryParams: MultiValueMap<String, String>): Flux<Lieferant>
+            + save(@Valid lieferant: Lieferant): Mono<Lieferant>
+            + @CacheEvict(key = "#id") update(@Valid lieferant: Lieferant, id: String, version: String): Mono<Lieferant>
+            + @CacheEvict(key = "#id") deleteById(id: String): Mono<Lieferant>
+        }
+
+        ' [hidden] fuer nicht-existierende Beziehungen als Workaround fuer das Layout
+        LieferantRepository -[hidden]-> Flux
+    }
+}
+
+hide empty members
+hide empty methods
+hide empty fields
+
+footer (c) Jürgen Zimmermann
+
+@enduml

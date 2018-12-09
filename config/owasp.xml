@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+
+<!--
+ Copyright (C) 2016 - present Juergen Zimmermann, Hochschule Karlsruhe
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<suppressions
+        xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.2.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.2.xsd ">
+    <!-- MongoDB -->
+    <suppress>
+        <notes><![CDATA[file name: spring-boot-starter-data-mongodb-reactive-2.0.3.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework\.boot:spring-boot-starter-data-mongodb-reactive:.*$</gav>
+        <cpe>cpe:/a:mongodb:mongodb</cpe>
+    </suppress>
+
+    <!-- Spring Cloud Stream -->
+    <suppress>
+        <notes><![CDATA[file name: spring-tuple-1.0.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework:spring-tuple:.*$</gav>
+        <cpe>cpe:/a:pivotal_software:spring_framework</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-tuple-1.0.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework:spring-tuple:.*$</gav>
+        <cpe>cpe:/a:vmware:springsource_spring_framework</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-tuple-1.0.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework:spring-tuple:.*$</gav>
+        <cpe>cpe:/a:pivotal:spring_framework</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-tuple-1.0.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework:spring-tuple:.*$</gav>
+        <cpe>cpe:/a:springsource:spring_framework</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-integration-kafka-3.0.3.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework\.integration:spring-integration-kafka:.*$</gav>
+        <cpe>cpe:/a:pivotal_software:spring_framework</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-integration-kafka-3.0.3.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework\.integration:spring-integration-kafka:.*$</gav>
+        <cpe>cpe:/a:pivotal:spring_framework</cpe>
+    </suppress>
+
+    <!-- AsciiDoctor -->
+    <suppress>
+        <notes><![CDATA[file name: jruby-9.2.0.0.jar]]></notes>
+        <gav regex="true">^org\.jruby:jruby:.*$</gav>
+        <cve>CVE-2012-5370</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jruby-core-9.2.0.0.jar]]></notes>
+        <gav regex="true">^org\.jruby:jruby-core:.*$</gav>
+        <cve>CVE-2012-5370</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jruby-stdlib-9.2.0.0.jar]]></notes>
+        <gav regex="true">^org\.jruby:jruby-stdlib:.*$</gav>
+        <cve>CVE-2012-5370</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: bytelist-1.0.15.jar]]></notes>
+        <gav regex="true">^org\.jruby\.extras:bytelist:.*$</gav>
+        <cpe>cpe:/a:jruby:jruby</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: dirgra-0.3.jar]]></notes>
+        <gav regex="true">^org\.jruby:dirgra:.*$</gav>
+        <cpe>cpe:/a:jruby:jruby</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: asciidoctorj-1.6.0-alpha.7.jar: jruby_cache_backend.jar]]></notes>
+        <sha1>993f3706b397773d989d6a02fa4e91a9ea8b0a24</sha1>
+        <cpe>cpe:/a:jruby:jruby</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jruby-stdlib-9.2.0.0.jar: jopenssl.jar]]></notes>
+        <gav regex="true">^rubygems:jruby-openssl:.*$</gav>
+        <cpe>cpe:/a:openssl_project:openssl</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jruby-stdlib-9.2.0.0.jar: jopenssl.jar]]></notes>
+        <gav regex="true">^rubygems:jruby-openssl:.*$</gav>
+        <cpe>cpe:/a:jruby:jruby</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jruby-stdlib-9.2.0.0.jar: jopenssl.jar]]></notes>
+        <gav regex="true">^rubygems:jruby-openssl:.*$</gav>
+        <cpe>cpe:/a:openssl:openssl</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jruby-stdlib-9.2.0.0.jar: cparse-jruby.jar]]></notes>
+        <sha1>37572f403a1bd512e76e40e4dc4d6f36528fd2bf</sha1>
+        <cpe>cpe:/a:jruby:jruby</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jruby-stdlib-9.2.0.0.jar: readline.jar]]></notes>
+        <gav regex="true">^rubygems:jruby-readline:.*$</gav>
+        <cpe>cpe:/a:jruby:jruby</cpe>
+    </suppress>
+</suppressions>

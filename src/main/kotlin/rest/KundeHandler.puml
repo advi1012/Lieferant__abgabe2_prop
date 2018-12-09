@@ -1,0 +1,60 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam componentStyle uml2
+
+' !pragma horizontalLineBetweenDifferentPackageAllowed
+
+package reactor.core.publisher {
+    abstract class Mono {
+    }
+}
+
+package org.springframework.web.reactive.function.server {
+    class ServerRequest {
+    }
+    class ServerResponse {
+    }
+}
+
+package de.hska.lieferant {
+    package entity {
+        class Lieferant << entity >> {
+        }
+    }
+
+    package service {
+        class LieferantService << service >> {
+        }
+    }
+
+    package rest #DDDDDD {
+        LieferantHandler *-right-> "1" LieferantService
+        LieferantHandler .down.> Lieferant
+        LieferantHandler .down.> Mono
+        LieferantHandler .down.> ServerRequest
+        LieferantHandler .down.> ServerResponse
+
+        ' [hidden] fuer nicht-existierende Beziehungen als Workaround fuer das Layout
+        Lieferant -[hidden]-> Mono
+        Lieferant -[hidden]-> ServerRequest
+        Lieferant -[hidden]-> ServerResponse
+
+        class LieferantHandler << boundary >> << @Component >> {
+            + findById(request: ServerRequest): Mono<ServerResponse>
+            + find(request: ServerRequest): Mono<ServerResponse>
+            + create(request: ServerRequest): Mono<ServerResponse>
+            + update(request: ServerRequest): Mono<ServerResponse>
+            + patch(request: ServerRequest): Mono<ServerResponse>
+            + deleteById(request: ServerRequest): Mono<ServerResponse>
+            + deleteByEmail(request: ServerRequest): Mono<ServerResponse>
+        }
+    }
+}
+
+hide empty members
+hide empty methods
+hide empty fields
+
+footer (c) Juergen Zimmermann
+
+@enduml

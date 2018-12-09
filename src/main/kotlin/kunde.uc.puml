@@ -1,0 +1,22 @@
+@startuml
+
+left to right direction
+skinparam packageStyle rect
+skinparam componentStyle uml2
+
+actor Gast
+actor Lieferant
+actor Admin
+
+rectangle lieferant {
+    Gast --> (registrieren)
+    Lieferant --> (Lieferant suchen)
+    Lieferant --> (Lieferant ändern)
+    Admin --> (Lieferant suchen)
+    Admin --> (Lieferant ändern)
+    Admin --> (Lieferant löschen)
+}
+
+footer (c) Jürgen Zimmermann
+
+@enduml
