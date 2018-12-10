@@ -30,33 +30,33 @@ Authorization: {{basic-auth-admin}}
 # k u n d e
 # -----------------------------------------------------------------
 
-### Suche alle Kunden
+### Suche alle Lieferanten
 https://{{host}}
 Authorization: {{basic-auth-admin}}
 ALPN: h2
 # ALPN: h2, http%2F1.1
 
-### Suche alle Kunden mit falschem Passwort: 401 (Unauthorized)
+### Suche alle Lieferanten mit falschem Passwort: 401 (Unauthorized)
 https://{{host}}
 Authorization: {{basic-auth-admin-falsch}}
 ALPN: h2
 
-### Suche alle Kunden mit fehlenden Rechten: 403 (Forbidden)
+### Suche alle Lieferanten mit fehlenden Rechten: 403 (Forbidden)
 https://{{host}}
 Authorization: {{basic-auth-alpha1}}
 ALPN: h2
 
-### Suche mit vorhandener Kunde-ID
+### Suche mit vorhandener Lieferanten-ID
 https://{{host}}/00000000-0000-0000-0000-000000000001
 Authorization: {{basic-auth-admin}}
 ALPN: h2
 
-### Suche mit ungueltiger Kunde-ID
+### Suche mit ungueltiger Lieferant-ID
 https://{{host}}/YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY
 Authorization: {{basic-auth-admin}}
 ALPN: h2
 
-### Suche mit nicht-vorhandener Kunde-ID
+### Suche mit nicht-vorhandener Lieferant-ID
 https://{{host}}/99999999-9999-9999-9999-999999999999
 Authorization: {{basic-auth-admin}}
 ALPN: h2
@@ -66,19 +66,19 @@ https://{{host}}/00000000-0000-0000-0000-000000000001
 Authorization: Basic {{basic-auth-admin-falsch}}
 ALPN: h2
 
-### Suche mit vorhandener Kunde-ID und ETag
+### Suche mit vorhandener Lieferant-ID und ETag
 https://{{host}}/00000000-0000-0000-0000-000000000001
 If-None-Match: 0
 Authorization: {{basic-auth-admin}}
 ALPN: h2
 
 ### Suche mit vorhandenem Nachnamen
-https://{{host}}/?nachname=delta
+https://{{host}}/?nachname=meier
 Authorization: {{basic-auth-admin}}
 ALPN: h2
 
 ### Suche mit vorhandener Email
-https://{{host}}/?email=alpha%40hska.edu
+https://{{host}}/?email=Fischer%40hska.edu
 Authorization: {{basic-auth-admin}}
 ALPN: h2
 
@@ -92,27 +92,27 @@ https://{{host}}/version/00000000-0000-0000-0000-000000000001
 Authorization: {{basic-auth-admin}}
 ALPN: h2
 
-### Streaming mit allen Kunden
+### Streaming mit allen Lieferanten
 https://{{host}}
 Accept: text/event-stream
 Authorization: {{basic-auth-admin}}
 ALPN: h2
 
-### Einen neuen Kunden anlegen
+### Einen neuen Lieferanten anlegen
 POST https://{{host}}
 Content-Type: application/json
 ALPN: h2
 
 < lieferant-neu.json
 
-### Einen neuen Kunden mit ungueltigen Daten versuchen anzulegen
+### Einen neuen Lieferanten mit ungueltigen Daten versuchen anzulegen
 POST https://{{host}}
 Content-Type: application/json
 ALPN: h2
 
 < lieferant-neu-invalid.json
 
-### Einen Kunden mittels PUT aktualisieren
+### Einen Lieferanten mittels PUT aktualisieren
 PUT https://{{host}}/00000000-0000-0000-0000-000000000001
 If-Match: 0
 Content-Type: application/json
@@ -139,26 +139,26 @@ ALPN: h2
 
 < lieferant-1-put.json
 
-### Zu einem vorhandenen Kunden ein PNG-Bild hochladen
-PUT https://{{host}}/multimedia/00000000-0000-0000-0000-000000000001
+### Zu einem vorhandenen Lieferanten ein PNG-Bild hochladen
+PUT https://{{host}}/multimedia/00000000-0000-0000-0000-000000000002
 Authorization: {{basic-auth-admin}}
 Content-Type: image/png
 
 < ./image.png
 
-### Zu einem vorhandenen Kunden ein JPEG-Bild hochladen
+### Zu einem vorhandenen Lieferanten ein JPEG-Bild hochladen
 PUT https://{{host}}/multimedia/00000000-0000-0000-0000-000000000001
 Authorization: {{basic-auth-admin}}
 Content-Type: image/jpeg
 
-< ./image.jpg
+< ./lieferant.jpg
 
-### Zu einem vorhandenen Kunden ein Bild (binaer!!!) herunterladen
+### Zu einem vorhandenen Lieferanten ein Bild (binaer!!!) herunterladen
 GET https://{{host}}/multimedia/00000000-0000-0000-0000-000000000001
 Authorization: {{basic-auth-admin}}
 Accept: image/*
 
-### Zu einem vorhandenen Kunden ein Bild als Multipart hochladen //chunks
+### Zu einem vorhandenen Lieferanten ein Bild als Multipart hochladen //chunks
 ### FIXME https://youtrack.jetbrains.com/issue/IDEA-187630
 PUT https://{{host}}/multimedia/00000000-0000-0000-0000-000000000001 HTTP/1.1
 Authorization: {{basic-auth-admin}}
@@ -170,7 +170,7 @@ Content-Disposition: form-data; name="file"; filename="image.png"; Content-Type=
 < ./image.png
 --boundary
 
-### Einen Kunden mittels PATCH aktualisieren
+### Einen Lieferanten mittels PATCH aktualisieren
 PATCH https://{{host}}/00000000-0000-0000-0000-000000000001
 If-Match: 0
 Content-Type: application/json
@@ -184,7 +184,7 @@ ALPN: h2
     { "op": "remove", "path": "/interessen", "value": "L" }
 ]
 
-### Einen Kunden mittels PATCH und ungueltigen Daten aktualisieren
+### Einen Lieferanten mittels PATCH und ungueltigen Daten aktualisieren
 PATCH https://{{host}}/00000000-0000-0000-0000-000000000001
 If-Match: 0
 Content-Type: application/json
@@ -195,7 +195,7 @@ ALPN: h2
   { "op": "replace", "path": "/email", "value": "emailungueltig@" }
 ]
 
-### Einen Kunden mittels PATCH und falschem Passwort aktualisieren: 401 (Unauthorized)
+### Einen Lieferanten mittels PATCH und falschem Passwort aktualisieren: 401 (Unauthorized)
 PATCH https://{{host}}/00000000-0000-0000-0000-000000000001
 If-Match: 0
 Content-Type: application/json
@@ -223,8 +223,8 @@ ALPN: h2
     { "op": "remove", "path": "/interessen", "value": "L" }
 ]
 
-### Löschen mit vorhandener Kunde-ID
-DELETE https://{{host}}/00000000-0000-0000-0000-000000000004
+### Löschen mit vorhandener Lieferant-ID
+DELETE https://{{host}}/00000000-0000-0000-0000-000000000006
 Authorization: {{basic-auth-admin}}
 ALPN: h2
 

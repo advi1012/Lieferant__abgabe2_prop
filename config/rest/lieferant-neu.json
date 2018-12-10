@@ -1,6 +1,6 @@
 {
-    "nachname": "Testput",
-    "email": "Theo@Test.de.put",
+    "nachname": "Test",
+    "email": "Theo@Test.de",
     "kategorie" : 1,
     "newsletter": true,
     "geburtsdatum": "2017-01-31",
@@ -8,8 +8,15 @@
         "betrag": 0,
         "waehrung": "EUR"
     },
+    "kondition": {
+        "skonto": 5,
+        "rabatt": 8,
+        "bonus": 0,
+        "waehrung": "EUR"
+    },
     "homepage": "https://www.test.de",
     "geschlecht": "W",
+    "lieferzeit": "K",
     "familienstand": "L",
     "interessen": [
         "R",
@@ -18,5 +25,9 @@
     "adresse": {
         "plz": "12345",
         "ort": "Testort"
+    },
+    "user": {
+        "username": "test",
+        "password": "p"
     }
 }

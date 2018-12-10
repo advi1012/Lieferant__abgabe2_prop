@@ -8,8 +8,10 @@
         "betrag": 0,
         "waehrung": "EUR"
     },
+    "kondition": null,
     "homepage": "https://www.test.de",
     "geschlecht": "W",
+    "lieferzeit": null,
     "familienstand": "L",
     "interessen": [
         "R",

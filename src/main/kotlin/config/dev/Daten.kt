@@ -33,7 +33,7 @@ val lieferantn = Flux.just(
         Lieferant(
                 id = "00000000-0000-0000-0000-000000000000",
                 nachname = "Meier",
-                email = "admin@hska.de",
+                email = "Meier@hska.de",
                 kategorie = 0,
                 newsletter = true,
                 geburtsdatum = LocalDate.of(2018, 1, 31),
@@ -52,7 +52,7 @@ val lieferantn = Flux.just(
         Lieferant(
                 id = "00000000-0000-0000-0000-000000000001",
                 nachname = "Fischer",
-                email = "alpha@hska.edu",
+                email = "Fischer@hska.edu",
                 kategorie = 1,
                 newsletter = true,
                 geburtsdatum = LocalDate.of(2018, 1, 1),
@@ -73,7 +73,7 @@ val lieferantn = Flux.just(
         Lieferant(
                 id = "00000000-0000-0000-0000-000000000002",
                 nachname = "Wagner",
-                email = "alpha@hska.ch",
+                email = "Wagner@hska.ch",
                 kategorie = 2,
                 newsletter = true,
                 geburtsdatum = LocalDate.of(2018, 1, 2),
@@ -94,7 +94,7 @@ val lieferantn = Flux.just(
         Lieferant(
                 id = "00000000-0000-0000-0000-000000000003",
                 nachname = "Koch",
-                email = "alpha@hska.uk",
+                email = "Koch@hska.uk",
                 kategorie = 3,
                 newsletter = true,
                 geburtsdatum = LocalDate.of(2018, 1, 3),
@@ -115,7 +115,7 @@ val lieferantn = Flux.just(
         Lieferant(
                 id = "00000000-0000-0000-0000-000000000004",
                 nachname = "Bauer",
-                email = "delta@hska.jp",
+                email = "Bauer@hska.jp",
                 kategorie = 4,
                 newsletter = true,
                 geburtsdatum = LocalDate.of(2018, 1, 4),
@@ -134,7 +134,7 @@ val lieferantn = Flux.just(
         Lieferant(
                 id = "00000000-0000-0000-0000-000000000005",
                 nachname = "Schwarz",
-                email = "epsilon@hska.cn",
+                email = "Schwarz@hska.cn",
                 kategorie = 5,
                 newsletter = true,
                 geburtsdatum = LocalDate.of(2018, 1, 5),
@@ -151,7 +151,7 @@ val lieferantn = Flux.just(
         Lieferant(
                 id = "00000000-0000-0000-0000-000000000006",
                 nachname = "Winfried",
-                email = "phi@hska.cn",
+                email = "Winfried@hska.cn",
                 kategorie = 6,
                 newsletter = true,
                 geburtsdatum = LocalDate.of(2018, 1, 6),

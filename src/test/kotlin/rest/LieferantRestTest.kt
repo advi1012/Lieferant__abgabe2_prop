@@ -253,7 +253,7 @@ class LieferantRestTest(@LocalServerPort private val port: Int) {
             // act
             val lieferantn = client.get()
                     .uri {
-                        it.path(KUNDE_PATH)
+                        it.path(LIEFERANT_PATH)
                                 .queryParam(NACHNAME_PARAM, nachnameLower)
                                 .build()
                     }
@@ -279,7 +279,7 @@ class LieferantRestTest(@LocalServerPort private val port: Int) {
             // act
             val lieferantn = client.get()
                     .uri {
-                        it.path(KUNDE_PATH)
+                        it.path(LIEFERANT_PATH)
                                 .queryParam(EMAIL_PARAM, email)
                                 .build()
                     }
@@ -781,7 +781,7 @@ class LieferantRestTest(@LocalServerPort private val port: Int) {
                 // act
                 val response = client.delete()
                         .uri {
-                            it.path(KUNDE_PATH)
+                            it.path(LIEFERANT_PATH)
                                     .queryParam(EMAIL_PARAM, email)
                                     .build()
                         }
@@ -798,7 +798,7 @@ class LieferantRestTest(@LocalServerPort private val port: Int) {
                 // act
                 val response = client.delete()
                         .uri {
-                            it.path(KUNDE_PATH)
+                            it.path(LIEFERANT_PATH)
                                     .queryParam(EMAIL_PARAM, "${email}xxxx")
                                     .build()
                         }
@@ -814,7 +814,7 @@ class LieferantRestTest(@LocalServerPort private val port: Int) {
                 // act
                 val response = client.delete()
                         .uri {
-                            it.path(KUNDE_PATH)
+                            it.path(LIEFERANT_PATH)
                                     .queryParam(EMAIL_PARAM, null)
                                     .build()
                         }
@@ -831,7 +831,7 @@ class LieferantRestTest(@LocalServerPort private val port: Int) {
     private companion object {
         val SCHEMA = "http"
         val HOST = "localhost"
-        val KUNDE_PATH = "/"
+        val LIEFERANT_PATH = "/"
         val ID_PATH = "/{id}"
         val NACHNAME_PARAM = "nachname"
         val EMAIL_PARAM = "email"
@@ -846,10 +846,10 @@ class LieferantRestTest(@LocalServerPort private val port: Int) {
         const val ID_UPDATE_PUT = "00000000-0000-0000-0000-000000000002"
         const val ID_UPDATE_PATCH = "00000000-0000-0000-0000-000000000003"
         const val ID_DELETE = "00000000-0000-0000-0000-000000000004"
-        const val EMAIL_VORHANDEN = "alpha@hska.edu"
-        const val EMAIL_DELETE = "phi@hska.cn"
+        const val EMAIL_VORHANDEN = "Fischer@hska.edu"
+        const val EMAIL_DELETE = "Schwarz@hska.cn"
 
-        const val NACHNAME = "alpha"
+        const val NACHNAME = "Meier"
 
         const val NEUE_PLZ = "12345"
         const val NEUE_PLZ_INVALID = "1234"

@@ -42,32 +42,32 @@ val users = Flux.just(
                         roleActuator)),
         CustomUserDetails(
                 id = "10000000-0000-0000-0000-000000000001",
-                username = "Fier",
+                username = "alpha1",
                 password = password,
                 authorities = listOf(roleLieferant)),
         CustomUserDetails(
                 id = "10000000-0000-0000-0000-000000000002",
-                username = "Waer",
+                username = "alpha2",
                 password = password,
                 authorities = listOf(roleLieferant)),
         CustomUserDetails(
                 id = "10000000-0000-0000-0000-000000000003",
-                username = "Koch",
+                username = "alpha3",
                 password = password,
                 authorities = listOf(roleLieferant)),
         CustomUserDetails(
                 id = "10000000-0000-0000-0000-000000000004",
-                username = "Baer",
+                username = "delta",
                 password = password,
                 authorities = listOf(roleLieferant)),
         CustomUserDetails(
                 id = "10000000-0000-0000-0000-000000000005",
-                username = "Scrz",
+                username = "epsilon",
                 password = password,
                 authorities = listOf(roleLieferant)),
         CustomUserDetails(
                 id = "10000000-0000-0000-0000-000000000006",
-                username = "Wied",
+                username = "phie",
                 password = password,
                 authorities = listOf(roleLieferant))
 )
