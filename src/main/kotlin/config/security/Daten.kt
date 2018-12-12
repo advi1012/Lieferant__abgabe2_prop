@@ -20,7 +20,7 @@ package de.hska.lieferant.config.security
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 import reactor.core.publisher.Flux
 
-private val roleLieferant = SimpleGrantedAuthority("ROLE_KUNDE")
+private val roleLieferant = SimpleGrantedAuthority("ROLE_LIEFERANT")
 private val roleAdmin = SimpleGrantedAuthority("ROLE_ADMIN")
 private val roleActuator = SimpleGrantedAuthority("ROLE_ACTUATOR")
 @Suppress("MayBeConstant")

@@ -130,7 +130,7 @@ class LieferantService(
                 id = null,
                 username = lieferantUser.username,
                 password = lieferantUser.password,
-                authorities = listOf(SimpleGrantedAuthority("ROLE_KUNDE")))
+                authorities = listOf(SimpleGrantedAuthority("ROLE_LIEFERANT")))
         logger.trace("User wird angelegt: {}", user)
         return userService.create(user)
                 .timeout(timeoutShort)

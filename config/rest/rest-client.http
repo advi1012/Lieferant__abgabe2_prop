@@ -121,7 +121,7 @@ ALPN: h2
 
 < lieferant-1-put.json
 
-### Einen Kunden mittels PUT und ungueltigen Daten aktualisieren
+### Einen Lieferanten mittels PUT und ungueltigen Daten aktualisieren
 PUT https://{{host}}/00000000-0000-0000-0000-000000000001
 If-Match: 0
 Content-Type: application/json
@@ -130,7 +130,7 @@ ALPN: h2
 
 < lieferant-1-put-invalid.json
 
-### Einen Kunden mittels PUT und falschem Passwort aktualisieren: 401 (Unauthorized)
+### Einen Lieferanten mittels PUT und falschem Passwort aktualisieren: 401 (Unauthorized)
 PUT https://{{host}}/00000000-0000-0000-0000-000000000001
 If-Match: 0
 Content-Type: application/json
@@ -209,7 +209,7 @@ ALPN: h2
     { "op": "remove", "path": "/interessen", "value": "L" }
 ]
 
-### Einen Kunden mittels PATCH und fehlenden Rechten aktualisieren: 403 (Forbidden)
+### Einen Lieferanten mittels PATCH und fehlenden Rechten aktualisieren: 403 (Forbidden)
 PATCH https://{{host}}/00000000-0000-0000-0000-000000000001
 If-Match: 0
 Content-Type: application/json
@@ -228,12 +228,12 @@ DELETE https://{{host}}/00000000-0000-0000-0000-000000000006
 Authorization: {{basic-auth-admin}}
 ALPN: h2
 
-### Löschen mit vorhandener Kunde-ID und falschem Passwort: 401 (Unauthorized)
+### Löschen mit vorhandener Lieferant-ID und falschem Passwort: 401 (Unauthorized)
 DELETE https://{{host}}/00000000-0000-0000-0000-000000000004
 Authorization: {{basic-auth-admin-falsch}}
 ALPN: h2
 
-### Löschen mit vorhandener Kunde-ID und fehlenden Rechten: 403 (Forbidden)
+### Löschen mit vorhandener Lieferant-ID und fehlenden Rechten: 403 (Forbidden)
 DELETE https://{{host}}/00000000-0000-0000-0000-000000000004
 Authorization: {{basic-auth-alpha1}}
 ALPN: h2

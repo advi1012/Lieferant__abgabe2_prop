@@ -50,7 +50,7 @@ class CustomUserDetails(
     username: String,
     password: String,
     authorities: Collection<SimpleGrantedAuthority> =
-        listOf(SimpleGrantedAuthority("ROLE_KUNDE"))
+        listOf(SimpleGrantedAuthority("ROLE_LIEFERANT"))
 ) : User(username, password, authorities), UserDetails {
     /**
      * Konstruktor für Spring Data, weil die geerbten Java-Attribute `final` sind.

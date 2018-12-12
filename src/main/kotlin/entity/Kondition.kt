@@ -10,7 +10,7 @@ import java.util.Currency
  *
  * @property skonto Der Skonto als unveränderliches Pflichtfeld.
  * @property rabatt Der Rabatt als unveränderliches Pflichtfeld.
- * @property bonus  Der Bonus als unveränderliches Pflichtfeld.
+ * @property bonus Der Bonus als unveränderliches Pflichtfeld.
  * @property waehrung Die Währungseinheit als unveränderliches Pflichtfeld.
  * @constructor Erzeugt ein Objekt mit Skonto, Rabatt, Bonus und Währung
  */

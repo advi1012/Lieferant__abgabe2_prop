@@ -16,7 +16,14 @@
  */
 package de.hska.lieferant.config.dev
 
-import de.hska.lieferant.entity.*
+import de.hska.lieferant.entity.LieferzeitType
+import de.hska.lieferant.entity.Lieferant
+import de.hska.lieferant.entity.Kondition
+import de.hska.lieferant.entity.Adresse
+import de.hska.lieferant.entity.FamilienstandType
+import de.hska.lieferant.entity.GeschlechtType
+import de.hska.lieferant.entity.InteresseType
+import de.hska.lieferant.entity.Umsatz
 import reactor.core.publisher.Flux
 import java.math.BigDecimal
 import java.net.URL
@@ -39,7 +46,7 @@ val lieferantn = Flux.just(
                 geburtsdatum = LocalDate.of(2018, 1, 31),
                 umsatz = Umsatz(BigDecimal("0"),
                         Currency.getInstance("EUR")),
-                kondition = Kondition(BigDecimal("3"), BigDecimal("5"),BigDecimal("0"),
+                kondition = Kondition(BigDecimal("3"), BigDecimal("5"), BigDecimal("0"),
                         Currency.getInstance("EUR")),
                 homepage = URL("https://www.hska.de"),
                 geschlecht = GeschlechtType.build("W"),
@@ -58,7 +65,7 @@ val lieferantn = Flux.just(
                 geburtsdatum = LocalDate.of(2018, 1, 1),
                 umsatz = Umsatz(BigDecimal("10"),
                         Currency.getInstance("USD")),
-                kondition = Kondition(BigDecimal("2"), BigDecimal("10"),BigDecimal("3"),
+                kondition = Kondition(BigDecimal("2"), BigDecimal("10"), BigDecimal("3"),
                         Currency.getInstance("USD")),
                 homepage = URL("https://www.hska.edu"),
                 geschlecht = GeschlechtType.build("M"),
@@ -79,7 +86,7 @@ val lieferantn = Flux.just(
                 geburtsdatum = LocalDate.of(2018, 1, 2),
                 umsatz = Umsatz(BigDecimal("20"),
                         Currency.getInstance("CHF")),
-                kondition = Kondition(BigDecimal("6"), BigDecimal("15"),BigDecimal("5"),
+                kondition = Kondition(BigDecimal("6"), BigDecimal("15"), BigDecimal("5"),
                         Currency.getInstance("CHF")),
                 homepage = URL("https://www.hska.ch"),
                 geschlecht = GeschlechtType.build("W"),
@@ -100,7 +107,7 @@ val lieferantn = Flux.just(
                 geburtsdatum = LocalDate.of(2018, 1, 3),
                 umsatz = Umsatz(BigDecimal("30"),
                         Currency.getInstance("GBP")),
-                kondition = Kondition(BigDecimal("3"), BigDecimal("5"),BigDecimal("10"),
+                kondition = Kondition(BigDecimal("3"), BigDecimal("5"), BigDecimal("10"),
                         Currency.getInstance("GBP")),
                 homepage = URL("https://www.hska.uk"),
                 geschlecht = GeschlechtType.build("M"),
@@ -121,7 +128,7 @@ val lieferantn = Flux.just(
                 geburtsdatum = LocalDate.of(2018, 1, 4),
                 umsatz = Umsatz(BigDecimal("40"),
                         Currency.getInstance("JPY")),
-                kondition = Kondition(BigDecimal("2"), BigDecimal("20"),BigDecimal("5"),
+                kondition = Kondition(BigDecimal("2"), BigDecimal("20"), BigDecimal("5"),
                         Currency.getInstance("JPY")),
                 homepage = URL("https://www.hska.jp"),
                 geschlecht = GeschlechtType.build("W"),

@@ -126,7 +126,7 @@ class LieferantMultimediaRestTest(@LocalServerPort private val port: Int) {
         val USERNAME = "admin"
         val PASSWORD = "p"
 
-        const val ID_UPDATE_IMAGE = "00000000-0000-0000-0000-000000000003"
+        const val ID_UPDATE_IMAGE = "00000000-0000-0000-0000-000000000002"
         const val IMAGE_FILE_PNG = "image.png"
         const val IMAGE_FILE_JPG = "image.jpg"
 

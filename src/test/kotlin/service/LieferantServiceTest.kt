@@ -204,7 +204,8 @@ class LieferantServiceTest {
         fun `Suche mit nicht-vorhandener Emailadresse`(email: String) {
             // arrange
             val queryParams = LinkedMultiValueMap(mapOf("email" to listOf(email)))
-            given(mongoTemplate.find(any(Query::class.java), eq(Lieferant::class.java))).willReturn(Flux.empty<Lieferant>())
+            given(mongoTemplate.find(any(Query::class.java), eq(Lieferant::class.java)))
+                .willReturn(Flux.empty<Lieferant>())
 
             // act
             val result = service.find(queryParams).collectList().block()!!
@@ -385,7 +386,8 @@ class LieferantServiceTest {
                 given(repo.findById(id)).willReturn(lieferantMock.toMono())
 
                 // act
-                val thrown: InvalidVersionException = assertThrows { service.update(lieferantMock, id, version).block() }
+                val thrown: InvalidVersionException =
+                    assertThrows { service.update(lieferantMock, id, version).block() }
 
                 // assert
                 assertEquals(thrown.message, "Falsche Versionsnummer $version")
@@ -405,7 +407,8 @@ class LieferantServiceTest {
                 given(repo.findById(id)).willReturn(lieferantMock.toMono())
 
                 // act
-                val thrown: InvalidVersionException = assertThrows { service.update(lieferantMock, id, version).block() }
+                val thrown: InvalidVersionException =
+                    assertThrows { service.update(lieferantMock, id, version).block() }
 
                 // assert
                 assertNull(thrown.cause)
@@ -460,11 +463,14 @@ class LieferantServiceTest {
     // -------------------------------------------------------------------------
     // Hilfsmethoden fuer Mocking
     // -------------------------------------------------------------------------
-    private fun createLieferantMock(nachname: String): Lieferant = createLieferantMock(randomUUID().toString(), nachname)
+    private fun createLieferantMock(nachname: String): Lieferant =
+        createLieferantMock(randomUUID().toString(), nachname)
 
-    private fun createLieferantMock(id: String, nachname: String): Lieferant = createLieferantMock(id, nachname, EMAIL)
+    private fun createLieferantMock(id: String, nachname: String): Lieferant =
+        createLieferantMock(id, nachname, EMAIL)
 
-    private fun createLieferantMock(id: String, nachname: String, email: String) = createLieferantMock(id, nachname, email, PLZ)
+    private fun createLieferantMock(id: String, nachname: String, email: String) =
+        createLieferantMock(id, nachname, email, PLZ)
 
     private fun createLieferantMock(id: String?, nachname: String, email: String, plz: String) =
         createLieferantMock(id, nachname, email, plz, null, null)

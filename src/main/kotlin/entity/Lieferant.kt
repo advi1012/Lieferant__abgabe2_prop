@@ -109,7 +109,7 @@ data class Lieferant(
     val umsatz: Umsatz? = null,
 
     @Indexed(sparse = true)
-    val kondition: Kondition? =null,
+    val kondition: Kondition? = null,
 
     val homepage: URL? = null,
 

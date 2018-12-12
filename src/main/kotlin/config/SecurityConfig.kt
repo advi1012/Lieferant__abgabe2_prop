@@ -79,7 +79,7 @@ interface SecurityConfig {
     @Suppress("MayBeConstant")
     companion object {
         private val adminRolle = "ADMIN"
-        private val lieferantRolle = "KUNDE"
+        private val lieferantRolle = "LIEFERANT"
         private val endpointAdminRolle = "ACTUATOR"
 
         private val lieferantPath = "/"
